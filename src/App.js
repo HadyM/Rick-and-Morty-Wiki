@@ -31,7 +31,7 @@ function App() {
       <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
       <div className="container">
         <div className="row">
-          Filter component will be placed here
+          Filter component will be placed here!!!
           <div className="col-lg-8 col-12">
             <div className="row">
               <Card results={results} />
