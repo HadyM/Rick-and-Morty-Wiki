@@ -14,7 +14,7 @@ import Location from "./Pages/Location";
 
 import "./App.css";
 
-function App() {
+const Home = () => {
   let [pageNumber, updatePageNumber] = useState(1);
   let [search, setSearch] = useState("");
   let [fetchedData, updateFetchedData] = useState([]);
@@ -59,6 +59,21 @@ function App() {
         updatePageNumber={updatePageNumber}
       />
     </div>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/episodes" element={<Episodes />} />
+          <Route path="/location" element={<Location />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
