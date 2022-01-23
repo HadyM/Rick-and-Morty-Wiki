@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 import styles from "./Card.module.scss";
 
-const Card = ({ results }) => {
+const Card = ({ page, results }) => {
   let display;
 
   if (results) {
@@ -8,7 +10,9 @@ const Card = ({ results }) => {
       let { id, image, name, status, location } = x;
 
       return (
-        <div
+        <Link
+          style={{ textDecoration: "none" }}
+          to={`${page}${id}`}
           key={id}
           className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark"
         >
@@ -52,7 +56,7 @@ const Card = ({ results }) => {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       );
     });
   } else {
